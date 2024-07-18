@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\RegisterRequest;
 use Illuminate\Auth\Events\Registered;
 use App\Providers\RouteServiceProvider;
+use App\Models\Question;
+use App\Models\Temoignage;
 
 
 class Authcontroler extends Controller
@@ -20,6 +22,52 @@ class Authcontroler extends Controller
     {
          return view('page.accueil');
     }
+
+    //page d'acceuil projet
+    public function afficheIndex()
+    {
+        $questions = Question::all();
+        $temoignages = Temoignage::all();
+        return view('pages.index',compact('questions'), compact('temoignages'));
+    }
+
+    //Accompagnement
+    public function afficheService1()
+    {
+        return view('pages.accompagnement');
+    }
+
+    // Conseil
+    public function afficheService2()
+    {
+        return view('pages.conseil');
+    }
+
+    //Amelioration
+    public function afficheService3()
+    {
+        return view('pages.amelioration');
+    }
+
+    //formations
+    public function afficheService4()
+    {
+        return view('pages.formations');
+    }
+
+    //Blog accueil
+    public function afficheBlog()
+    {
+        return view('pages.blog');
+    }
+
+    //Blog content
+    public function afficheContenuBlog()
+    {
+        return view('pages.blog-accueil');
+    }
+
+
 
     //service 1 Accompagnement
     public function showService1()

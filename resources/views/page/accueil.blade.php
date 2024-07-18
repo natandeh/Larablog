@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>FGadvisory</title>
+    <title>F&J advisory</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid d-flex justify-content-center w-100">
                 <a class="navbar-brand" href="index.html">
                     <img src="{{ asset('img/logosite-01.png') }}" alt="logowebsite" height="70">
@@ -49,6 +52,8 @@
             </div>
         </nav>
     </header>
+
+
     <main>
 
 
@@ -59,46 +64,58 @@
                 <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
                 <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
             </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{ asset('img/workplace-team-cooperation-businesswoman-laptop-office-01.png') }}" class="d-block w-100" height="700px" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1>  F&J ADVISORY</h1>
-                        <p style="font-size: 20px">
-                            Cabinet panafricain de conseils en management,<br>
-                            de conseils financier et de formations en gestion.
-                        </p>
-                        <a href="" class="btn btn-lg btn-primary" >
-                            En savoir plus
-                        </a>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+
+                    <!-- Premier élément -->
+                    <div class="carousel-item active">
+                        <img src="{{ asset('img/workplace-team-cooperation-businesswoman-laptop-office-01.png') }}" class="d-block w-100" style="height: 600px;" alt="...">
+                        <div class="carousel-caption d-flex align-items-center justify-content-center">
+                            <div>
+                                <h1>F&J ADVISORY</h1>
+                                <p style="font-size: 20px">
+                                    Cabinet panafricain de conseils en management,<br>
+                                    de conseils financier et de formations en gestion.
+                                </p>
+                                <p>
+                                    <a href="" class="btn btn-lg btn-primary">En savoir plus</a>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('img/18516.jpg') }} " class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1>Notre mission</h1>
-                        <p >Équiper les PME et entrepreneurs <br>
-                            africains des meilleurs outils pratiques de gestion moderne <br>
-                            en offrant des services de conseil et de formation adaptés.</p>
+
+                    <!-- Deuxième élément -->
+                    <div class="carousel-item">
+                        <img src="{{ asset('img/18516.jpg') }}" class="d-block w-100" style="height: 600px;" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>Notre mission</h1>
+                            <p>Équiper les PME et entrepreneurs africains des meilleurs outils pratiques de gestion moderne en offrant des services de conseil et de formation adaptés.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://via.placeholder.com/1500x500" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
+
+                    <!-- Troisième élément -->
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/1500x500" class="d-block w-100" style="height: 600px;" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </div>
                     </div>
+
                 </div>
+
+                <!-- Contrôles -->
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </a>
-        </div>
+
 
 
             <div class="expertise">

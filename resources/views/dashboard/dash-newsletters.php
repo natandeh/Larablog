@@ -67,6 +67,11 @@
           </ul>
           <ul>
                 <li class="relative px-6 py-3">
+
+                <span
+                    class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                    aria-hidden="true"
+                ></span>
                 <a
                     class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                     href="/newsletters"
@@ -85,17 +90,13 @@
                         d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
                     ></path>
                     </svg>
-                    <span class="ml-4">Newsletters</span>
+                    <span class="ml-4">Newletters</span>
                 </a>
-                </li>
+
           </ul>
 
           <ul>
             <li class="relative px-6 py-3">
-            <span
-                class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                aria-hidden="true"
-            ></span>
             <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                 href="/dashtemoin"
@@ -142,7 +143,7 @@
                 <span class="ml-4">Liste des admins</span>
             </a>
             </li>
-      </ul>
+        </ul>
 
             <li class="relative px-6 py-3">
               <button
@@ -191,12 +192,16 @@
                   class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
                   aria-label="submenu"
                 >
-                  <a class="w-full">
+
+                  <li
+                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                  >
+                    <a class="w-full">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button type="submit" style="background: none; border: none; color: inherit; padding: 0; cursor: pointer;">Déconnexion</button>
-                    </form>
 
+                    </form>
                     </a>
                   </li>
                 </ul>
@@ -205,7 +210,7 @@
           </ul>
           <div class="px-6 my-6">
             <button
-              class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+              class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
               style="background-color: #1f5993"
             >
               Créer un admin.
@@ -214,16 +219,18 @@
           </div>
 
           <div class="px-6 my-6">
-            <a href="/addblog">
+          <a href="/addblog">
                 <button
                 class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
                 style="background-color: #1f5993"
-              >
-                Ajouter un article blog
+                >
+                Ajouter un article Blog
                 <span class="ml-2" aria-hidden="true">+</span>
-              </button>
+                </button>
             </a>
           </div>
+
+
 
           <div class="px-6 my-6">
             <a href="/temoignage">
@@ -290,12 +297,16 @@
                     d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
                   ></path>
                 </svg>
-                <span class="ml-4">Liste des questions</span>
+                <span class="ml-4">Liste des articles</span>
               </a>
             </li>
           </ul>
           <ul>
             <li class="relative px-6 py-3">
+                <span
+                class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                aria-hidden="true"
+              ></span>
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                 href="/newsletters"
@@ -321,10 +332,6 @@
 
             <ul>
                 <li class="relative px-6 py-3">
-                <span
-                    class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                    aria-hidden="true"
-                ></span>
                 <a
                     class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                     href="/dashtemoin"
@@ -348,35 +355,30 @@
                 </li>
             </ul>
 
-
             <ul>
-                <li class="relative px-6 py-3">
-                <span
-                    class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                    aria-hidden="true"
-                ></span>
-                <a
-                    class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                    href="/listeadmin"
+            <li class="relative px-6 py-3">
+            <a
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="/listeadmin"
+            >
+                <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
                 >
-                    <svg
-                    class="w-5 h-5"
-                    aria-hidden="true"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    >
-                    <path
-                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
-                    ></path>
-                    </svg>
-                    <span class="ml-4">Liste des admins</span>
-                </a>
-                </li>
-            </ul>
+                <path
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                ></path>
+                </svg>
+                <span class="ml-4">Liste des admins</span>
+            </a>
+            </li>
+        </ul>
 
 
             <li class="relative px-6 py-3">
@@ -426,15 +428,15 @@
                   class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
                   aria-label="submenu"
                 >
+
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
                   <a class="w-full">
-                    <form action="{{ route('logout') }}" method="POST">
+                    <form action="{{ route('logout') }}" method="post">
                         @csrf
                         <button type="submit" style="background: none; border: none; color: inherit; padding: 0; cursor: pointer;">Déconnexion</button>
                     </form>
-
                     </a>
                   </li>
 
@@ -447,13 +449,14 @@
               class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
               style="background-color: #1f5993"
             >
-                Créer un admin
+              Créer un admin.
               <span class="ml-2" aria-hidden="true">+</span>
             </button>
           </div>
 
 
           <div class="px-6 my-6">
+
             <a href="/addblog">
                 <button
                 class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
@@ -463,7 +466,9 @@
                 <span class="ml-2" aria-hidden="true">+</span>
                 </button>
             </a>
+
           </div>
+
 
           <div class="px-6 my-6">
             <a href="/temoignage">
@@ -553,61 +558,33 @@
               F&J ADVISORY ADMINISTRATION
             </h2>
 
-             <!-- With actions -->
-             <h4
+ <!-- With actions -->
+
+ <h4
              class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300"
            >
-             Liste des temoignages
+             Liste des E-mail
            </h4>
+
                 <div class="w-full overflow-hidden rounded-lg shadow-xs">
                     <div class="w-full overflow-x-auto">
                         <table class="w-full whitespace-no-wrap">
                             <thead>
                                 <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                    <th class="px-4 py-3 cursor-pointer" onclick="sortTable(0)">No.</th>
-                                    <th class="px-4 py-3 cursor-pointer" onclick="sortTable(1)">Nom</th>
-                                    <th class="px-4 py-3 cursor-pointer" onclick="sortTable(2)">Prenoms</th>
-                                    <th class="px-4 py-3 cursor-pointer" onclick="sortTable(3)">Profession</th>
-                                    <th class="px-4 py-3 cursor-pointer" onclick="sortTable(3)">Temoignage</th>
-                                    <th class="px-4 py-3 cursor-pointer" onclick="sortTable(3)">Actions</th>
+                                    <th class="px-4 py-3 cursor-pointer" onclick="sortTable(0)">E-mail</th>
+                                    <th class="px-4 py-3 cursor-pointer" onclick="sortTable(0)">Actions</th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-
-                                 @php
-                                    $idee = 1;
-                                @endphp
-
-                                @foreach ($temoignages as $temoignage)
-
                                 <tr class="text-gray-700 dark:text-gray-400">
-                                    <td class="px-4 py-3">
-                                        {{ $idee }}
-                                    </td>
-                                    <td class="px-4 py-3 text-xs">
-                                        {{ $temoignage->nom }}
-                                    </td>
-                                    <td class="px-4 py-3 text-sm">{{ $temoignage->prenoms }}</td>
-                                    <td class="px-4 py-3 text-sm">{{ $temoignage->profession }}</td>
-                                    <td class="px-4 py-3 text-sm">{{ $temoignage->temoignage }}</td>
-                                    <td class="px-4 py-3 text-sm">
-                                        <a href="/modifier-temoignage/{{ $temoignage->id }}">Modifier</a>
-                                        <a href="/supprimer-temoignage/{{ $temoignage->id }}">Supprimer </a>
-                                    </td>
+                                    <td class="px-4 py-3 text-sm">hans.burger@example.com</td>
+                                    <td class="px-4 py-3 text-sm">Supprimer</td>
                                 </tr>
-
-                                @php
-                                    $idee += 1;
-                                @endphp
-                                @endforeach
                                 <!-- Plus de lignes ici -->
                             </tbody>
                         </table>
                     </div>
                 </div>
-
-
-
 
                   </div>
                 </div>

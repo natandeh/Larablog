@@ -13,6 +13,7 @@ use Illuminate\Auth\Events\Registered;
 use App\Providers\RouteServiceProvider;
 use App\Models\Question;
 use App\Models\Temoignage;
+use App\Models\Post;
 
 
 class Authcontroler extends Controller
@@ -58,14 +59,17 @@ class Authcontroler extends Controller
     //Blog accueil
     public function afficheBlog()
     {
-        return view('pages.blog');
+        $posts = Post::query()->with('user')->get();
+        return view('pages.blog',compact('posts'));
     }
 
     //Blog content
     public function afficheContenuBlog()
     {
-        return view('pages.blog-accueil');
+        $posts = Post::query()->with('user')->get();
+        return view('pages.blog-accueil',compact('posts'));
     }
+
 
 
 
@@ -102,6 +106,7 @@ class Authcontroler extends Controller
     //rédirection vers la page d'inscription
     public function showRegister()
     {
+
          return view('auth.register1');
     }
 
@@ -118,9 +123,7 @@ class Authcontroler extends Controller
         ]);
 
 
-        event(new Registered($user));
-
-        return redirect()->route('login');
+        return redirect()->route('dashb.page');
         //récupération des données au sein du formulaire
         //User::query()->create($request->validated());
         //Rédirection vers la page de connexion après inscription validée
@@ -155,7 +158,7 @@ class Authcontroler extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->route('blog.index');
+        return redirect()->route('dashb.page');
 
 
         //     $registered = Auth::attempt(['email' => $request->email, 'password' => $request->password]);
@@ -172,11 +175,12 @@ class Authcontroler extends Controller
 
      public function loginDash(LoginRequest $request)
     {
+
         $request->authenticate();
 
         $request->session()->regenerate();
 
-        return redirect()->route('dashbo.page');
+        return redirect()->route('dashb.page');
 
 
         //     $registered = Auth::attempt(['email' => $request->email, 'password' => $request->password]);

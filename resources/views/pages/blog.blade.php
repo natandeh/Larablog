@@ -100,18 +100,18 @@
 
       <div class="container">
         <div class="row gy-4">
-
+        @foreach ($posts as $post)
           <div class="col-lg-4">
             <article>
 
-              <div class="post-img">
+            <div class="post-img">
                 <img src="assets1/img/blog/blogdemo.jpg" alt="" class="img-fluid">
               </div>
 
               <p class="post-category"><br></p>
 
               <h2 class="title">
-                <a href="/blogcontent">Dolorum optio tempore voluptas dignissimos</a>
+                <a href="/blogcontent">{{ $post -> title }}</a>
               </h2>
 
               <div class="d-flex align-items-center">
@@ -122,7 +122,7 @@
 
             </article>
           </div><!-- End post list item -->
-
+        @endforeach
 
         </div>
       </div>

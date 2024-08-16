@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostRequest;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Models\Question;
 use App\Models\Temoignage;
+use Illuminate\Auth\Events\Validated;
+use Illuminate\Support\Facades\Auth;
 
 class DashController extends Controller
 {
     //page d'accueil
     public function showDashboard()
     {
-         return view('dashboard.index');
+        $posts = Post::query()->with('user')->get();
+        return view('dashboard.index', compact('posts'));
     }
 
     //QUESTION
@@ -46,6 +51,16 @@ class DashController extends Controller
         return redirect('/dashboard');
     }
 
+    //NEWSLETTERS
+    public function afficheNewletters()
+    {
+        return view('dashboard.dash-newsletters');
+    }
+    //LISTE ADMIN
+    public function afficherAdmin()
+    {
+        return view('dashboard.dash-admin');
+    }
     //  Formulaire modification question (GET)
     public function formModifquest ($id)
     {
@@ -77,7 +92,7 @@ class DashController extends Controller
         return redirect('/dashquest');
     }
 
-    //TEMOIGNAGE
+    //TEMOIGNAGES
     //page temoingnages client
     public function afficheDashtemoin()
     {
@@ -188,4 +203,22 @@ class DashController extends Controller
         return view('dashboard.tables');
     }
 
+
+    //CRUD BLOG
+    //Route formulaire
+    public function adblog()
+    {
+        return view('dashboard.formsBlog');
+    }
+
+    //Validation et récupération des valeurs
+    public function adblogpost (PostRequest $request)
+    {
+        $path = $request->file('image')->store('uploads', 'public');
+        $post = $request -> Validated();
+        $post['image'] = $path;
+        $post['user_id']=Auth::user()->id;
+        Post::query()->create($post );
+        return redirect('/dashboard');
+    }
 }

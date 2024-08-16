@@ -74,7 +74,7 @@
 
                 <a
                     class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                    href="/dashquest"
+                    href="/newsletters"
                 >
                     <svg
                     class="w-5 h-5"
@@ -90,7 +90,7 @@
                         d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
                     ></path>
                     </svg>
-                    <span class="ml-4">Questions frequemment posées</span>
+                    <span class="ml-4">Newletters</span>
                 </a>
                 </li>
           </ul>
@@ -118,6 +118,30 @@
                 <span class="ml-4">Temoignage-client</span>
             </a>
             </li>
+            @if (auth()->user()->admin)
+                <li class="relative px-6 py-3">
+                    <a
+                        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                        href="/listeadmin"
+                    >
+                        <svg
+                        class="w-5 h-5"
+                        aria-hidden="true"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        >
+                        <path
+                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                        ></path>
+                        </svg>
+                        <span class="ml-4">Liste des admins</span>
+                    </a>
+                </li>
+            @endif
         </ul>
 
             <li class="relative px-6 py-3">
@@ -170,8 +194,12 @@
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="pages/create-account.html">
-                      Deconnexion
+                  <a class="w-full">
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit" style="background: none; border: none; color: inherit; padding: 0; cursor: pointer;">Déconnexion</button>
+                    </form>
+
                     </a>
                   </li>
                 </ul>
@@ -179,22 +207,27 @@
             </li>
           </ul>
           <div class="px-6 my-6">
-            <button
-              class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-              style="background-color: #1f5993"
-            >
-              Ajouter un article blog
-              <span class="ml-2" aria-hidden="true">+</span>
-            </button>
-          </div>
 
-          <div class="px-6 my-6">
-            <a href="/question">
+            @if (auth()->user()->admin)
+                <div class="px-6 my-6">
+                    <a href="/register">
+                        <button
+                            class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                            style="background-color: #1f5993"
+                                >
+                            Créer un admin.
+                            <span class="ml-2" aria-hidden="true">+</span>
+                        </button>
+                    </a>
+
+                </div>
+             @endif
+             <a href="/addblog">
                 <button
                 class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
                 style="background-color: #1f5993"
-                    >
-                Ajouter une question
+                >
+                Ajouter un article Blog
                 <span class="ml-2" aria-hidden="true">+</span>
                 </button>
             </a>
@@ -280,7 +313,7 @@
                 ></span>
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="/dashquest"
+                href="/newsletters"
               >
                 <svg
                   class="w-5 h-5"
@@ -296,7 +329,7 @@
                     d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
                   ></path>
                 </svg>
-                <span class="ml-4">Questions frequemment posées</span>
+                <span class="ml-4">Newsletters</span>
               </a>
             </li>
         <ul>
@@ -305,7 +338,7 @@
                 <li class="relative px-6 py-3">
                 <a
                     class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                    href="/forms"
+                    href="/listeadmin"
                 >
                     <svg
                     class="w-5 h-5"
@@ -321,9 +354,32 @@
                         d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
                     ></path>
                     </svg>
-                    <span class="ml-4">Temoignage-client</span>
+                    <span class="ml-4">Liste des admins</span>
                 </a>
                 </li>
+
+                <li class="relative px-6 py-3">
+                    <a
+                        class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                        href="/dashtemoin"
+                    >
+                        <svg
+                        class="w-5 h-5"
+                        aria-hidden="true"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        >
+                        <path
+                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                        ></path>
+                        </svg>
+                        <span class="ml-4">Temoignage-client</span>
+                    </a>
+                    </li>
             </ul>
 
 
@@ -377,8 +433,11 @@
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="pages/create-account.html">
-                      Deconnexion
+                  <a class="w-full">
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit" style="background: none; border: none; color: inherit; padding: 0; cursor: pointer;">Déconnexion</button>
+                    </form>
                     </a>
                   </li>
 
@@ -387,27 +446,32 @@
             </li>
           </ul>
           <div class="px-6 my-6">
-            <button
-              class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-              style="background-color: #1f5993"
-            >
-              Ajouter un article Blog
-              <span class="ml-2" aria-hidden="true">+</span>
-            </button>
+            @if (auth()->user()->admin)
+
+                <a href="/register">
+                    <button
+                        class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                        style="background-color: #1f5993"
+                            >
+                        Créer un admin.
+                        <span class="ml-2" aria-hidden="true">+</span>
+                    </button>
+                </a>
+
+             @endif
           </div>
 
           <div class="px-6 my-6">
-            <a href="/question">
+            <a href="/addblog">
                 <button
                 class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
                 style="background-color: #1f5993"
-                    >
-                Ajouter une question
+                >
+                Ajouter un article Blog
                 <span class="ml-2" aria-hidden="true">+</span>
                 </button>
             </a>
           </div>
-
 
           <div class="px-6 my-6">
             <a href="/temoignage">
@@ -498,39 +562,52 @@
             </h2>
 
              <!-- With actions -->
+
              <h4
              class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300"
            >
              Liste des articles
            </h4>
+
+
                 <div class="w-full overflow-hidden rounded-lg shadow-xs">
                     <div class="w-full overflow-x-auto">
                         <table class="w-full whitespace-no-wrap">
                             <thead>
                                 <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                    <th class="px-4 py-3 cursor-pointer" onclick="sortTable(0)">Nom</th>
-                                    <th class="px-4 py-3 cursor-pointer" onclick="sortTable(1)">Prenoms</th>
-                                    <th class="px-4 py-3 cursor-pointer" onclick="sortTable(2)">Date</th>
-                                    <th class="px-4 py-3 cursor-pointer" onclick="sortTable(3)">E-mail</th>
+                                    <th class="px-4 py-3 cursor-pointer" onclick="sortTable(0)">No.</th>
+                                    <th class="px-4 py-3 cursor-pointer" onclick="sortTable(1)">Titre</th>
+                                    <th class="px-4 py-3 cursor-pointer" onclick="sortTable(2)">Content</th>
+                                    <th class="px-4 py-3 cursor-pointer" onclick="sortTable(3)">Auteur</th>
+                                    <th class="px-4 py-3 cursor-pointer" onclick="sortTable(3)">Actions</th>
                                 </tr>
                             </thead>
+                            @php
+                                $ide = 1;
+                            @endphp
+                            @foreach ($posts as $post)
+
                             <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                                 <tr class="text-gray-700 dark:text-gray-400">
                                     <td class="px-4 py-3">
-                                        <div class="flex items-center text-sm">
-                                            <div>
-                                                <p class="font-semibold">Hans Burger</p>
-                                            </div>
-                                        </div>
+                                        {{ $ide }}
                                     </td>
                                     <td class="px-4 py-3 text-xs">
-                                        <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">Approved</span>
+                                        {{ $post -> title }}
                                     </td>
-                                    <td class="px-4 py-3 text-sm">6/10/2020</td>
-                                    <td class="px-4 py-3 text-sm">hans.burger@example.com</td>
+                                    <td class="px-4 py-3 text-sm">{{ $post -> content }}</td>
+                                    <td class="px-4 py-3 text-sm">{{ $post -> user ->firstname }}</td>
+                                    <td class="px-4 py-3 text-sm">
+                                        <a href="#">Modifier</a>
+                                        <a href="#">Supprimer</a>
+                                    </td>
+
                                 </tr>
                                 <!-- Plus de lignes ici -->
                             </tbody>
+
+                            @endforeach
+
                         </table>
                     </div>
                 </div>

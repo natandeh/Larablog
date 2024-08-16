@@ -17,10 +17,12 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            //$table->unsignedInteger('user_id');
             $table->string('title');
             $table->text('content');
             $table->string('image');
             $table->foreignIdFor(App\Models\User::class);
+            //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

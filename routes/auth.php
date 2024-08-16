@@ -12,9 +12,8 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 
+
 Route::middleware('guest')->group(function () {
-    Route::get('register', [Authcontroler::class,'showRegister'])
-                ->name('register');
 
     Route::post('register', [Authcontroler::class,'register'])->name('postRegister');
 
